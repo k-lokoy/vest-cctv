@@ -3,7 +3,10 @@ import cors from 'cors'
 
 const router = express()
 
-router.options('*', cors())
+router.options('*', cors({
+  origin: ['https://vest-cctv.herokuapp.com']
+}))
+
 router.use(express.static('client/build'))
 
 export default router
