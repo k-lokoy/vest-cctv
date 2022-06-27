@@ -3,7 +3,7 @@ import cors from 'cors'
 
 const router = express()
 
-// router.use(cors)
 router.options('*', cors())
+router.use(express.static('client/build'))
 
 export default router
