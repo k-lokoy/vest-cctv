@@ -42,7 +42,7 @@ export default function Map({ lat, lon }) {
     const scriptTag = document.createElement('script')
     
     scriptTag.setAttribute('type', 'text/javascript')
-    scriptTag.setAttribute('src', 'http://www.bing.com/api/maps/mapcontrol?callback=getMap')
+    scriptTag.setAttribute('src', 'https://www.bing.com/api/maps/mapcontrol?callback=getMap')
     scriptTag.async = true
     scriptTag.defer = true
 
