@@ -72,6 +72,30 @@ const locations = [
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.308196,
     lon: 5.341326
+  },
+  {
+    id: 'rv580-lagunen',
+    title: 'RV580 Lagunen',
+    src: 'https://webkamera.atlas.vegvesen.no/public/kamera?id=110678',
+    type: EMBED_TYPES.IMAGE,
+    lat: 60.297485,
+    lon: 5.327368
+  },
+  {
+    id: 'rv580-flyplassveien',
+    title: 'RV580 Flyplassveien',
+    src: 'https://webkamera.atlas.vegvesen.no/public/kamera?id=284629',
+    type: EMBED_TYPES.IMAGE,
+    lat: 60.292236,
+    lon: 5.238832
+  },
+  {
+    id: 'e39-fjosangerveien',
+    title: 'E39 Fjøsangerveien',
+    src: 'https://webkamera.atlas.vegvesen.no/public/kamera?id=110699',
+    type: EMBED_TYPES.IMAGE,
+    lat: 60.353325,
+    lon: 5.338389
   }
 ]
 
