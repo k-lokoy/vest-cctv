@@ -1,8 +1,9 @@
+import express from 'express'
 import fetch from 'node-fetch'
 
-import router from './router.js'
+const router = new express.Router()
 
-router.get('/api/tweets', async function(req, res) {
+router.get('/', async function(req, res) {
   try {
     const options = {
       headers: {
@@ -29,3 +30,4 @@ router.get('/api/tweets', async function(req, res) {
     res.sendStatus(500)
   }
 })
+ export default router

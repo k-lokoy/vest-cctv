@@ -1,8 +1,9 @@
+import express from 'express'
 import fetch from 'node-fetch'
 
-import router from './router.js'
+const router = new express.Router()
 
-router.get('/api/bingreports', async function(req, res) {
+router.get('/', async function(req, res) {
   try {
     const data = await fetch(`http://dev.virtualearth.net/REST/v1/Traffic/Incidents/${req.query.mapArea}/true/?key=${process.env.BING_MAPS_API_KEY}`)
       .then(res => res.json())
@@ -20,3 +21,5 @@ router.get('/api/bingreports', async function(req, res) {
     res.sendStatus(500)
   }
 })
+
+export default router
