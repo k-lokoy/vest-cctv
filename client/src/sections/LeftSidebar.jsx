@@ -36,14 +36,14 @@ export default function LeftSidebar() {
 const StyledSidebar = styled.div`
   background-color: var(--color--700);
   grid-area: leftSidebar;
-  padding: 1em;
+  padding: 1.5em 1em;
 `
 
 const StyledNav = styled.nav`
   display: flex;
   flex-direction: column;
   gap: 3em;
-  margin-block: 1em 2em;
+  margin-block-end: 2em;
 
   a {
     color: var(--color--300);

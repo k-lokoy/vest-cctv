@@ -7,8 +7,9 @@ export default function PageHeader({ children }) {
 const StyledHeader = styled.header`
   grid-area: pageHeader;
   background-color: var(--color--100);
-  padding: 1em;
+  padding: 1.5em 1em;
   display: flex;
+  align-items: center;
   box-shadow: 0 .25em 1em -.5em var(--color--300);
   z-index: 100;
   gap: .5em;
@@ -17,7 +18,6 @@ const StyledHeader = styled.header`
     font-size: 1rem;
     font-weight: 500;
     margin: 0;
-    padding-block: .25em;
   }
 
   select {
@@ -25,7 +25,6 @@ const StyledHeader = styled.header`
     border: none;
     font-size: 1rem;
     cursor: pointer;
-    padding: .25em;
 
     &:hover {
       background-color: var(--color--200);
