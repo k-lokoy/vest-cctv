@@ -69,3 +69,30 @@ Resources:
         EntryPoints: 
         - index.ts
 
+  WeatherFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      Environment:
+        Variables:
+          OPEN_WEATHER_API_KEY: OPEN_WEATHER_API_KEY
+      CodeUri: weather/
+      Handler: index.lambdaHandler
+      Runtime: nodejs16.x
+      Architectures:
+        - x86_64
+      Events:
+        BingReports:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /weather
+            Method: get
+            RestApiId:
+              Ref: VestCCTVAPI
+    Metadata: # Manage esbuild properties
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: "es2020"
+        # Sourcemap: true # Enabling source maps will create the required NODE_OPTIONS environment variables on your lambda function during sam build
+        EntryPoints: 
+        - index.ts

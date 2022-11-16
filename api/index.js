@@ -1,6 +1,5 @@
 import express from 'express'
 
-import weatherRouter from './weather.js'
 
 const proxy = express()
 
@@ -12,6 +11,5 @@ proxy.use(function(req, res, next) {
 
 proxy.use(express.static('client/build'))
 
-proxy.use('/api/weather', weatherRouter)
 
 export default proxy
