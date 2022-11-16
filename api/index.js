@@ -1,6 +1,5 @@
 import express from 'express'
 
-import bingReportsRouter from './bingreports.js'
 import tweetsRouter from './tweets.js'
 import weatherRouter from './weather.js'
 
@@ -14,7 +13,6 @@ proxy.use(function(req, res, next) {
 
 proxy.use(express.static('client/build'))
 
-proxy.use('/api/bingreports', bingReportsRouter)
 proxy.use('/api/tweets', tweetsRouter)
 proxy.use('/api/weather', weatherRouter)
 
