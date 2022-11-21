@@ -15,7 +15,7 @@ interface BingIncidents {
 
 const isBingIncidents = (a: any): a is BingIncidents => (a.resourceSets)
 
-export const lambdaHandler = async (
+export default async (
   event: APIGatewayProxyEventV2
 ): Promise<APIGatewayProxyStructuredResultV2> => {
   try {

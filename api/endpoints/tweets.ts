@@ -21,7 +21,7 @@ interface Tweets {
 const isAuthor = (a: any): a is Author => (a.data)
 const isTweets = (a: any): a is Tweets => (a.data)
 
-export const lambdaHandler = async (
+export default async (
   event: APIGatewayProxyEventV2
 ): Promise<APIGatewayProxyStructuredResultV2> => {
   try {
