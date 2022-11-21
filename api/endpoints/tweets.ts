@@ -46,6 +46,10 @@ export default async (
 
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin" : "*",
+        "Access-Control-Allow-Credentials" : true
+      },
       body: JSON.stringify(tweets.data.map(tweet => ({
         id: tweet.id,
         text: tweet.text,

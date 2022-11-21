@@ -28,6 +28,10 @@ export default async (
 
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin" : "*",
+        "Access-Control-Allow-Credentials" : true
+      },
       body: JSON.stringify(data.resourceSets[0].resources.map((resource) => ({
         id: resource.incidentId,
         title: resource.title,
