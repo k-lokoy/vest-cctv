@@ -10,28 +10,11 @@ Globals:
       - x86_64
 
 Resources:
-  VestCCTVAPI:
-    Type: AWS::Serverless::Api
-    Properties:
-      StageName: staging
-      OpenApiVersion: 3.0.3
-
   BingReportsFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Environment:
-        Variables:
-          BING_MAPS_API_KEY: BING_MAPS_API_KEY
       CodeUri: endpoints/
       Handler: index.bingreports
-      Events:
-        BingReports:
-          Type: Api
-          Properties:
-            Path: /bingreports
-            Method: get
-            RestApiId:
-              Ref: VestCCTVAPI
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
@@ -43,19 +26,8 @@ Resources:
   TweetsFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Environment:
-        Variables:
-          TWITTER_API_TOKEN: TWITTER_API_TOKEN
       CodeUri: endpoints/
       Handler: index.tweets
-      Events:
-        BingReports:
-          Type: Api
-          Properties:
-            Path: /tweets
-            Method: get
-            RestApiId:
-              Ref: VestCCTVAPI
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
@@ -67,19 +39,8 @@ Resources:
   WeatherFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Environment:
-        Variables:
-          OPEN_WEATHER_API_KEY: OPEN_WEATHER_API_KEY
       CodeUri: endpoints/
       Handler: index.weather
-      Events:
-        BingReports:
-          Type: Api
-          Properties:
-            Path: /weather
-            Method: get
-            RestApiId:
-              Ref: VestCCTVAPI
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
