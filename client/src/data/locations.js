@@ -10,6 +10,14 @@ const locations = [
     lon: 5.114327,
   },
   {
+    id: 'straume',
+    title: 'Straume',
+    src: 'https://svplive-lh.akamaized.net/hls/live/2039444/vnytt/7abi7pvbgjR1WYqDKmLCjc/level.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
+    lat: 60.360576,
+    lon: 5.124039,
+  },
+  {
     id: 'sotrabrua-ost',
     title: 'Sotrabrua (East)',
     src: 'https://svplive-lh.akamaized.net/hls/live/2039445/vnytt/Az5Vp5WRfVJyIK5ffvQoe/source.m3u8',
