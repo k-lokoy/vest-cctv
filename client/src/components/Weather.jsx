@@ -14,7 +14,7 @@ export default function Weather({ lat, lon }) {
   const [ weatherData, setWeatherData ] = useState(null)
 
   useEffect(function() {
-    fetch(`/api/weather?lat=${lat}&lon=${lon}&units=${settings.units}`)
+    fetch(`${process.env.REACT_APP_API_URI}/weather?lat=${lat}&lon=${lon}&units=${settings.units}`)
       .then(res => res.json())
       .then((data) => {
         setWeatherData({

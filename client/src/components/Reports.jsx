@@ -17,8 +17,8 @@ export default function Reports() {
       const newReports = (await Promise.all([
         ...twitterAccounts
             .filter(({ isEnabled }) => isEnabled)
-            .map(({ handle }) => fetch(`/api/tweets?handle=${handle}`).then(res => res.json())),
-        fetch(`/api/bingreports?mapArea=${mapArea.flat().join(',')}`)
+            .map(({ handle }) => fetch(`${process.env.REACT_APP_API_URI}/tweets?handle=${handle}`).then(res => res.json())),
+        fetch(`${process.env.REACT_APP_API_URI}/bingreports?mapArea=${mapArea.flat().join(',')}`)
           .then(res => res.json())
       ])).flat()
 
