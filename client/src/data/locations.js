@@ -4,23 +4,23 @@ const locations = [
   {
     id: 'straumsundet-bru',
     title: 'Straumsundet bru',
-    src: 'https://v.angelcam.com/iframe?v=b91rxzv7lo',
-    type: EMBED_TYPES.IFRAME,
+    src: 'https://svplive-lh.akamaized.net/hls/live/2039443/vnytt/2zEqnNlg9A5khXswMVuH0/source.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
     lat: 60.358455,
     lon: 5.114327,
   },
   {
     id: 'sotrabrua-ost',
     title: 'Sotrabrua (East)',
-    src: 'https://v.angelcam.com/iframe?v=m17yd80kle',
-    type: EMBED_TYPES.IFRAME,
+    src: 'https://svplive-lh.akamaized.net/hls/live/2039445/vnytt/Az5Vp5WRfVJyIK5ffvQoe/source.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
     lat: 60.372490,
     lon: 5.170646
   },
   {
     id: 'sotrabrua-vest',
     title: 'Sotrabrua (West)',
-    src: 'https://kamera.vegvesen.no/public/1229038_1/manifest.m3u8',
+    src: 'https://kamera.vegvesen.no/public/1229038_2/manifest.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.372551,
     lon: 5.161009
