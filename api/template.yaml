@@ -1,7 +1,18 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: vestcctv-api
-  
+
+Parameters:
+  BingMapsAPIKey:
+    Type: String
+    Description: "Bing maps API Key"
+  TwitterAPIToken:
+    Type: String
+    Description: "Twitter API Token"
+  OpenWeatherAPIKey:
+    Type: String
+    Description: "Open Weather API Key"
+
 Globals:
   Function:
     Timeout: 3
@@ -22,6 +33,9 @@ Resources:
     Properties:
       CodeUri: endpoints/
       Handler: index.bingreports
+      Environment:
+        Variables:
+          BING_MAPS_API_KEY: !Ref BingMapsAPIKey
       Events:
         BingReports:
           Type: HttpApi
@@ -42,6 +56,9 @@ Resources:
     Properties:
       CodeUri: endpoints/
       Handler: index.tweets
+      Environment:
+        Variables:
+          TWITTER_API_TOKEN: !Ref TwitterAPIToken
       Events:
         BingReports:
           Type: HttpApi
@@ -62,6 +79,9 @@ Resources:
     Properties:
       CodeUri: endpoints/
       Handler: index.weather
+      Environment:
+        Variables:
+          OPEN_WEATHER_API_KEY: !Ref OpenWeatherAPIKey
       Events:
         BingReports:
           Type: HttpApi
