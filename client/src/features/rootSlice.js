@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { EMBED_TYPES, UNITS } from '../data/constants'
+import { UNITS } from '../data/constants'
 import locations from '../data/locations'
 import { accounts as twitterAccounts } from '../data/twitter'
 
 const initialState = {
-  currentLocation: locations.find(({ type }) => EMBED_TYPES.IFRAME === type)?.id,
+  currentLocation: locations[0].id,
   lastRefreshed: 0,
   units: 'metric',
   maxReportAge: 8.64e+7,
