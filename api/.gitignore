@@ -1,3 +1,2 @@
 .aws-sam
-env.json
 template.yaml
