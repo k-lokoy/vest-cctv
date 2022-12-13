@@ -14,7 +14,7 @@ export default function About() {
           <br />
           <br />
           <br />
-          <h5>Sources include</h5>
+          <h3>Sources include</h3>
           <ul>
             <li><a href="https://www.vegvesen.no/trafikkinformasjon/reiseinformasjon/webkamera/#/" target="_blank">Statens vegvesen cameras</a></li>
             <li><a href="https://www.bt.no/emne/webkamera" target="_blank">Bergens Tidende cameras</a></li>
@@ -36,6 +36,10 @@ const StyledMain = styled.main`
   grid-area: main;
   overflow-y: auto;
   padding: 1em;
+
+  h3 {
+    font-size: .9rem;
+  }
 `
 
 const StyledCopyright = styled.p`
