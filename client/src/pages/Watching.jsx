@@ -20,7 +20,7 @@ export default function Watching() {
   return (
     <>
       <PageHeader>
-        <h2>Cemara:</h2>
+        <h2>Camara:</h2>
         {location && <select onChange={handleSwitch} defaultValue={location.id}>
           {locations.map(({ id, title }) => <option key={id} value={id}>{title}</option>)}
         </select>}
