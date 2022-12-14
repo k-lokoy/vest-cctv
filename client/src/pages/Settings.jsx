@@ -41,7 +41,11 @@ export default function Settings() {
             isChecked={user.isEnabled}
             onChange={() => dispatch(toggleTwitterAccount((user.handle)))}
           />
-          <span>Include tweets from <a href={`https://twitter.com/${user.handle}`} target="_blank">@{user.handle}</a></span>
+          <span>Include tweets from <a
+            href={`https://twitter.com/${user.handle}`}
+            target="_blank"
+            rel="noreferrer"
+          >@{user.handle}</a></span>
         </div>)}
       </StyledMain>
     </>
