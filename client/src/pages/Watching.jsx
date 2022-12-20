@@ -11,7 +11,7 @@ import locations from '../data/locations'
 export default function Watching() {
   const dispatch = useDispatch()
   const currentLocation = useSelector((state) => state.currentLocation)
-  const location  = locations.find(location => location.id == currentLocation)
+  const location  = locations.find(location => location.id === currentLocation) || locations[0]
   
   function handleSwitch(e) {
     dispatch(setCurrentLocation(e.target.value))
