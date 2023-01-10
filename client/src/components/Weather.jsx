@@ -30,11 +30,11 @@ export default function Weather({ lat, lon }) {
   
   if (!weatherData)
     return (<StyledWeatherContainer>
-      <h4>Weather</h4>
+      <h2>Weather</h2>
     </StyledWeatherContainer>)
 
   return (<StyledWeatherContainer>
-    <h4>Weather</h4>
+    <h2>Weather</h2>
     <p>{weatherData.status}</p>
     <p>Temp: <b>{weatherData.temp}</b></p>
     <p>Humidity: <b>{weatherData.humidity}</b></p>
@@ -49,6 +49,10 @@ const StyledWeatherContainer = styled.div`
   display: grid;
   gap: .5em;
   min-height: 8rem;
+
+  h2 {
+    font-size: 1rem;
+  }
 
   @media (min-width: 48em) {
     justify-items: space-between;
@@ -69,7 +73,7 @@ const StyledWeatherContainer = styled.div`
   @media (min-width: 64em) {
     grid-template-columns: repeat(2, minmax(50%, 1fr));
 
-    h3,
+    h2,
     p:nth-child(2) {
       grid-column: 1 / 3;
     }

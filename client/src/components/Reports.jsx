@@ -41,7 +41,7 @@ export default function Reports() {
 
   return (
     <StyledReportsContainer>
-      <h4>Reports</h4>
+      <h2>Reports</h2>
       {reports.map(report => <StyledReport key={report.id} type={report.type}>
         <StyledReportDate>{formatDateTime(new Date(report.time))}</StyledReportDate>
         {report.author && <StyledReportAuthor href={report.url} target="_blank">{report.author.name}</StyledReportAuthor>}
@@ -53,8 +53,9 @@ export default function Reports() {
 }
 
 const StyledReportsContainer = styled.div`
-  h4 {
+  h2 {
     margin: 1em;
+    font-size: 1rem;
   }
 
   > * + * {

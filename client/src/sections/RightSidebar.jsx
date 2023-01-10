@@ -8,7 +8,7 @@ import locations from '../data/locations'
 
 export default function RightSidebar() {
   const currentLocation  = useSelector((state) => state.currentLocation)
-  const location = locations.find(({ id }) => id === currentLocation)
+  const location = locations.find(({ id }) => id === currentLocation) || locations[0]
 
   if (!location) return
 

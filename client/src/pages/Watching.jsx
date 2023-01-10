@@ -11,7 +11,7 @@ import locations from '../data/locations'
 export default function Watching() {
   const dispatch = useDispatch()
   const currentLocation = useSelector((state) => state.currentLocation)
-  const location  = locations.find(location => location.id == currentLocation)
+  const location  = locations.find(location => location.id === currentLocation) || locations[0]
   
   function handleSwitch(e) {
     dispatch(setCurrentLocation(e.target.value))
@@ -20,7 +20,7 @@ export default function Watching() {
   return (
     <>
       <PageHeader>
-        <h2>Cemara:</h2>
+        <h2>Camara:</h2>
         {location && <select onChange={handleSwitch} defaultValue={location.id}>
           {locations.map(({ id, title }) => <option key={id} value={id}>{title}</option>)}
         </select>}

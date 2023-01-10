@@ -5,7 +5,7 @@ import locations from '../data/locations'
 import { accounts as twitterAccounts } from '../data/twitter'
 
 const initialState = {
-  currentLocation: locations[0].id,
+  currentLocation: null,
   lastRefreshed: 0,
   units: 'metric',
   maxReportAge: 8.64e+7,
