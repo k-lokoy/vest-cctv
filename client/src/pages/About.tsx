@@ -2,12 +2,13 @@ import styled from 'styled-components'
 
 import PageHeader from '../sections/PageHeader'
 
-export default function About() {
+const About: React.FC = () => {
   return (
     <>
       <PageHeader>
-      <h2>About</h2>
+        <h2>About</h2>
       </PageHeader>
+      
       <StyledMain>
         <article>
           <p>Vest CCTV is a project aimed to consolidate various traffic data and information for the Bergen region in Norway.</p>
@@ -66,3 +67,5 @@ const StyledCopyright = styled.p`
   font-size: .75rem;
   margin-block-start: 5em;
 `
+
+export default About

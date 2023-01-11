@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import PageHeader from '../sections/PageHeader'
 
-export default function Fallback() {
+const Fallback: React.FC = () => {
   return (
     <>
       <PageHeader>
@@ -20,3 +20,5 @@ const StyledMain = styled.main`
   overflow-y: auto;
   padding: 1em;
 `
+
+export default Fallback

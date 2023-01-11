@@ -5,16 +5,16 @@ import Video from '../components/Video'
 import Map from '../components/Map'
 
 import PageHeader from '../sections/PageHeader'
-import { setCurrentLocation } from '../features/rootSlice'
+import { setCurrentLocation, VestCCTVState } from '../features/rootSlice'
 import locations from '../data/locations'
 
-export default function Watching() {
+const Watching: React.FC = () => {
   const dispatch = useDispatch()
-  const currentLocation = useSelector((state) => state.currentLocation)
+  const currentLocation = useSelector((state: VestCCTVState) => state.currentLocation)
   const location  = locations.find(location => location.id === currentLocation) || locations[0]
   
-  function handleSwitch(e) {
-    dispatch(setCurrentLocation(e.target.value))
+  function handleSwitch(e: React.FormEvent<HTMLSelectElement>) {
+    dispatch(setCurrentLocation((e.target as HTMLSelectElement).value))
   }
 
   return (
@@ -38,3 +38,5 @@ const StyledMain = styled.main`
   grid-area: main;
   overflow-y: auto;
 `
+
+export default Watching

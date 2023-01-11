@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
-import { setUnits, setMaxReportAge, toggleTwitterAccount } from '../features/rootSlice'
+import { setUnits, setMaxReportAge, toggleTwitterAccount, VestCCTVState } from '../features/rootSlice'
 
 import PageHeader from '../sections/PageHeader'
 import Toggle from '../components/Toggle'
@@ -9,7 +9,7 @@ import Toggle from '../components/Toggle'
 import { UNITS } from '../data/constants'
 
 export default function Settings() {
-  const settings = useSelector((state) => state)
+  const settings = useSelector((state: VestCCTVState) => state)
   const dispatch = useDispatch()
   
   return (
@@ -20,8 +20,17 @@ export default function Settings() {
       
       <StyledMain>
         <div>
-          <select name="units" value={settings.units} onChange={(e) => dispatch(setUnits(e.target.value))}>
-            {UNITS.map(unit => <option key={unit} value={unit}>{unit}</option>)}
+          <select
+            name="units"
+            value={settings.units}
+            onChange={
+              (e: React.FormEvent<HTMLSelectElement>) =>
+                dispatch(setUnits(parseInt((e.target as HTMLSelectElement).value)))
+            }
+          >
+            {Object.values(UNITS).map(unit =>
+              <option key={unit.name} value={unit.name}>{unit.name}</option>)
+            }
           </select>
           Units
         </div>
