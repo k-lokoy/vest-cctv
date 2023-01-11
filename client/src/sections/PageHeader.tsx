@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export default function PageHeader({ children }) {
+interface PageHeaderProps {
+  children: React.ReactNode
+}
+
+const PageHeader: React.FC<PageHeaderProps> = ({ children }) => {
   return (<StyledHeader>{children}</StyledHeader>)
 }
 
@@ -31,3 +35,5 @@ const StyledHeader = styled.header`
     }
   }
 `
+
+export default PageHeader

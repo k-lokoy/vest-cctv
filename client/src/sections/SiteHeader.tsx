@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { formatDateTime } from '../utils'
 
-export default function SiteHeader() {
+const SiteHeader: React.FC = () => {
   const [ dateTimeStr, setDateTimeStr ] = useState('1 Jan, 00:00')
 
   useEffect(function() {
@@ -44,3 +44,5 @@ const StyledClock = styled.div`
   color: var(--color--300);
   padding: .25em .5em;
 `
+
+export default SiteHeader

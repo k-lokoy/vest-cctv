@@ -5,9 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVideo, faCog, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 
 import { formatDateTime } from '../utils'
+import { VestCCTVState } from '../features/rootSlice'
 
-export default function LeftSidebar() {
-  const lastRefreshed = useSelector((state) => state.lastRefreshed)
+const LeftSidebar: React.FC = () => {
+  const lastRefreshed = useSelector((state: VestCCTVState) => state.lastRefreshed)
 
   return (
     <StyledSidebar>
@@ -95,3 +96,5 @@ const StyledLastUpdated = styled.div`
     
   }
 `
+
+export default LeftSidebar

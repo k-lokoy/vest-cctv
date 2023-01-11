@@ -5,12 +5,13 @@ import Weather from '../components/Weather'
 import Reports from '../components/Reports'
 
 import locations from '../data/locations'
+import { VestCCTVState } from '../features/rootSlice'
 
 export default function RightSidebar() {
-  const currentLocation  = useSelector((state) => state.currentLocation)
+  const currentLocation  = useSelector((state: VestCCTVState) => state.currentLocation)
   const location = locations.find(({ id }) => id === currentLocation) || locations[0]
 
-  if (!location) return
+  if (!location) return (<></>)
 
   return (
     <StyledSidebar>
