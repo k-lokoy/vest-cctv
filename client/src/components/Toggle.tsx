@@ -1,6 +1,16 @@
 import styled from 'styled-components'
 
-export default function Toggle({ isChecked, id, onChange }) {
+interface ToggleProps {
+  isChecked: boolean
+  id: string
+  onChange: () => void
+}
+
+interface StyledLabelProps {
+  isChecked: boolean
+}
+
+const Toggle: React.FC<ToggleProps> = ({ isChecked, id, onChange }) => {
   return (
     <>
       <input style={{display: 'none'}}
@@ -18,7 +28,12 @@ export default function Toggle({ isChecked, id, onChange }) {
 const StyledLabel = styled.label`
   position: relative;
   display: block;
-  background-color: ${props => props.isChecked ? 'var(--color-blue)' : 'var(--color--300)'};
+  background-color: ${
+    (props: StyledLabelProps) =>
+      props.isChecked
+        ? 'var(--color-blue)'
+        : 'var(--color--300)'
+  };
   width: 2em;
   height: 1em;
   border-radius: .128em;
@@ -28,11 +43,21 @@ const StyledLabel = styled.label`
     position: absolute;
     display: block;
     content: '';
-    background-color: ${props => props.isChecked ? 'var(--color--100)' : 'var(--color--200)'};
+    background-color: ${
+      (props: StyledLabelProps) =>
+        props.isChecked
+          ? 'var(--color--100)'
+          : 'var(--color--200)'
+    };
     width: 40%;
     height: 70%;
     inset-block-start: 15%;
-    inset-inline: ${props => props.isChecked ? 'auto 10%' : '10% auto'};
+    inset-inline: ${
+      (props: StyledLabelProps) =>
+        props.isChecked
+          ? 'auto 10%'
+          : '10% auto'
+    };
     border-radius: .128em;
     transition: .15s ease-in-out;
   }
@@ -41,3 +66,5 @@ const StyledLabel = styled.label`
     display: none;
   }
 `
+
+export default Toggle

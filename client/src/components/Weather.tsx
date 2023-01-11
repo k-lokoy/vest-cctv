@@ -2,27 +2,38 @@ import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-import {
-  DIRECTIONS,
-  TEMP_UNITS,
-  RAIN_AMOUNT_UNITS,
-  WIND_SPEED_UNITS,
-} from '../data/constants'
+import { UNITS, DIRECTIONS, UnitType } from '../data/constants'
+import { VestCCTVState } from '../features/rootSlice'
 
-export default function Weather({ lat, lon }) {
-  const settings = useSelector((state) => state)
-  const [ weatherData, setWeatherData ] = useState(null)
+interface WeatherProps {
+  lat: number
+  lon: number
+}
+
+interface WeatherData {
+  temp: string
+  humidity: string
+  windSpeed: string
+  windDir: string
+  rain: string
+}
+
+const Weather: React.FC<WeatherProps> = ({ lat, lon }) => {
+  const settings = useSelector((state: VestCCTVState) => state)
+  const [ weatherData, setWeatherData ] = useState<WeatherData>()
 
   useEffect(function() {
-    fetch(`${process.env.REACT_APP_API_URI}/weather?lat=${lat}&lon=${lon}&units=${settings.units}`)
+    const unit = UNITS[settings.units] || UNITS[UnitType.Metric]
+
+    fetch(`${process.env.REACT_APP_API_URI}/weather?lat=${lat}&lon=${lon}&units=${unit.name.toLowerCase()}`)
       .then(res => res.json())
       .then((data) => {
         setWeatherData({
-          temp:      `${Math.round(data.main.temp)} ${TEMP_UNITS[settings.units]}`,
+          temp:      `${Math.round(data.main.temp)} ${unit.temp}`,
           humidity:  `${data.main.humidity}%`,
-          windSpeed: `${data.wind.speed.toFixed(1)}${WIND_SPEED_UNITS[settings.units]}`,
+          windSpeed: `${data.wind.speed.toFixed(1)}${unit.speed}`,
           windDir:   `${DIRECTIONS[Math.floor(data.wind.deg % 360 / (360 / DIRECTIONS.length))]}`,
-          rain:      `${data.rain ? data.rain?.['1h'] : 0}${RAIN_AMOUNT_UNITS[settings.units]}`
+          rain:      `${data.rain ? data.rain?.['1h'] : 0}${unit.rain}`
         })
       })
       .catch(console.error)
@@ -35,10 +46,9 @@ export default function Weather({ lat, lon }) {
 
   return (<StyledWeatherContainer>
     <h2>Weather</h2>
-    <p>{weatherData.status}</p>
     <p>Temp: <b>{weatherData.temp}</b></p>
     <p>Humidity: <b>{weatherData.humidity}</b></p>
-    <p>Wind: <b>{weatherData.windSpeed} {weatherData.windDirection}</b></p>
+    <p>Wind: <b>{weatherData.windSpeed} {weatherData.windDir}</b></p>
     <p>Rain: <b>{weatherData.rain}</b></p>
   </StyledWeatherContainer>)
 }
@@ -79,3 +89,5 @@ const StyledWeatherContainer = styled.div`
     }
   }
 `
+
+export default Weather

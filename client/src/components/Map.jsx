@@ -33,7 +33,7 @@ export default function Map({ lat, lon }) {
       center: new Maps.Location(lat, lon),
       zoom: 15
     })
-  })
+  }, [])
 
   useEffect(function() {
     if (window.Microsoft && window.Microsoft.Maps)

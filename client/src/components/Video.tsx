@@ -1,13 +1,18 @@
 import { useRef, useEffect } from 'react'
 import styled from 'styled-components'
-import videojs from 'video.js'
+import videojs, { VideoJsPlayer } from 'video.js'
 
 import 'video.js/dist/video-js.css'
-import { EMBED_TYPES } from '../data/constants'
+import { EmbedType } from '../data/constants'
 
-export default function Video({ src, type }) {
+interface VideoProps {
+  src: string
+  type: EmbedType
+}
+
+const Video: React.FC<VideoProps> = ({ src, type }) => {
   const videoRef  = useRef(null)
-  const playerRef = useRef(null)
+  const playerRef = useRef<VideoJsPlayer>()
 
   const videoJsOptions = {
     autoplay: true,
@@ -19,7 +24,7 @@ export default function Video({ src, type }) {
     }]
   }
 
-  function onReady(player) {
+  function onReady(player: VideoJsPlayer) {
     player.src(src)
     player.play()
   }
@@ -29,19 +34,19 @@ export default function Video({ src, type }) {
 
     playerRef.current = videojs(videoRef.current, videoJsOptions, () => {
       videojs.log('player is ready');
-      onReady && onReady(playerRef.current)
+      playerRef.current && onReady && onReady(playerRef.current)
     })
   }, [src])
 
   switch(type) {
-    case EMBED_TYPES.VIDEO_JS:
+    case EmbedType.VideoJS:
       return (
         <div data-vjs-player>
           <StyledVideo ref={videoRef} className='video-js vjs-big-play-centered' />
         </div>
       )
 
-    case EMBED_TYPES.IMAGE:
+    case EmbedType.Image:
       return (
         <StyledImg src={`${src}&t=${Date.now()}`} />
       )
@@ -68,3 +73,5 @@ const StyledImg = styled.img`
   width: 100%;
   height: auto;
 `
+
+export default Video

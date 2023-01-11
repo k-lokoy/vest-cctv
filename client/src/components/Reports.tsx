@@ -7,17 +7,34 @@ import { formatDateTime } from '../utils'
 
 import { mapArea } from '../data/reports'
 
-export default function Reports() {
-  const [ reports, setReports ] = useState([])
-  const { twitterAccounts, maxReportAge } = useSelector((state) => state)
+import { VestCCTVState } from '../features/rootSlice'
+
+interface TrafficReport {
+  id: string
+  type: number
+  url: string
+  time: number
+  author: {
+    name: string
+  }
+  title: string
+  text: string
+}
+
+const Reports: React.FC = () => {
+  const [ reports, setReports ] = useState<TrafficReport[]>([])
+  const { twitterAccounts, maxReportAge } = useSelector((state: VestCCTVState) => state)
   const dispatch = useDispatch()
 
   async function updateReports() {
     try {
-      const newReports = (await Promise.all([
+      const newReports: TrafficReport[] = (await Promise.all([
         ...twitterAccounts
             .filter(({ isEnabled }) => isEnabled)
-            .map(({ handle }) => fetch(`${process.env.REACT_APP_API_URI}/tweets?handle=${handle}`).then(res => res.json())),
+            .map(({ handle }) =>
+              fetch(`${process.env.REACT_APP_API_URI}/tweets?handle=${handle}`)
+                .then(res => res.json())
+            ),
         fetch(`${process.env.REACT_APP_API_URI}/bingreports?mapArea=${mapArea.flat().join(',')}`)
           .then(res => res.json())
       ])).flat()
@@ -42,13 +59,14 @@ export default function Reports() {
   return (
     <StyledReportsContainer>
       <h2>Reports</h2>
-      {reports.map(report => <StyledReport key={report.id} type={report.type}>
-        <StyledReportDate>{formatDateTime(new Date(report.time))}</StyledReportDate>
-        {report.author && <StyledReportAuthor href={report.url} target="_blank">{report.author.name}</StyledReportAuthor>}
-        {report.title && <StyledReportTitle>{report.title}</StyledReportTitle>}
-        <p>{report.text}</p>
-      </StyledReport>)
-      }
+      {reports.map((report: TrafficReport) => 
+        <StyledReport key={`${report.id}`} type={report.type}>
+          <StyledReportDate>{formatDateTime(new Date(report.time))}</StyledReportDate>
+          {report.author && <StyledReportAuthor href={report.url} target="_blank">{report.author.name}</StyledReportAuthor>}
+          {report.title && <StyledReportTitle>{report.title}</StyledReportTitle>}
+          <p>{report.text}</p>
+        </StyledReport>
+      )}
     </StyledReportsContainer>)
 }
 
@@ -89,7 +107,7 @@ const StyledReport = styled.div`
     height: calc(100% - 2em);
     display: block;
     content: '';
-    border-inline-start: .25em solid ${props => 
+    border-inline-start: .25em solid ${(props: {type: number}) => 
       accentColors.find(entry => entry.types.includes(props.type))?.color || 'var(--color--300)'
     }
   }
@@ -111,3 +129,5 @@ const StyledReportAuthor = styled.a`
 const StyledReportTitle = styled.p`
   font-weight: 500;
 `
+
+export default Reports
