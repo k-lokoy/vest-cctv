@@ -2,9 +2,9 @@ import { EMBED_TYPES } from './constants'
 
 const locations = [
   {
-    id: 'straumsundet-bru',
-    title: 'Straumsundet bru',
-    src: 'https://svplive-lh.akamaized.net/hls/live/2039443/vnytt/2zEqnNlg9A5khXswMVuH0/source.m3u8',
+    id: 'straumsundet',
+    title: 'Straumsundet',
+    src: 'https://svplive-lh.akamaized.net/hls/live/2039444/vnytt/mLTCtDZlSUPVAuUqmIliz/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.358455,
     lon: 5.114327,
@@ -12,7 +12,15 @@ const locations = [
   {
     id: 'straume',
     title: 'Straume',
-    src: 'https://svplive-lh.akamaized.net/hls/live/2039444/vnytt/7abi7pvbgjR1WYqDKmLCjc/level.m3u8',
+    src: 'https://svplive-lh.akamaized.net/hls/live/2039443/vnytt/qSIcaRpL0KZVyWQs6G9CW/source.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
+    lat: 60.360576,
+    lon: 5.124039,
+  },
+    {
+    id: 'straume-2',
+    title: 'Straume 2',
+    src: 'https://svplive-lh.akamaized.net/hls/live/2039442/vnytt/qy2WDmHr5pgQxjMuWTbDy/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.360576,
     lon: 5.124039,
@@ -20,7 +28,7 @@ const locations = [
   {
     id: 'sotrabrua-ost',
     title: 'Sotrabrua (East)',
-    src: 'https://svplive-lh.akamaized.net/hls/live/2039445/vnytt/Az5Vp5WRfVJyIK5ffvQoe/source.m3u8',
+    src: 'https://svplive-lh.akamaized.net/hls/live/2039445/vnytt/0K3lxIhudMtz1yAfOAnk0/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.372490,
     lon: 5.170646
@@ -29,6 +37,14 @@ const locations = [
     id: 'sotrabrua-vest',
     title: 'Sotrabrua (West)',
     src: 'https://kamera.vegvesen.no/public/1229038_2/manifest.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
+    lat: 60.372551,
+    lon: 5.161009
+  },
+  {
+    id: 'janaflaten',
+    title: 'Janaflaten',
+    src: 'https://svplive-lh.akamaized.net/hls/live/2039445/vnytt/Nhm66VX22NbQJ59NqYyr9/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.372551,
     lon: 5.161009
@@ -80,30 +96,6 @@ const locations = [
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.308196,
     lon: 5.341326
-  },
-  {
-    id: 'rv580-lagunen',
-    title: 'RV580 Lagunen',
-    src: 'https://webkamera.atlas.vegvesen.no/public/kamera?id=110678',
-    type: EMBED_TYPES.IMAGE,
-    lat: 60.297485,
-    lon: 5.327368
-  },
-  {
-    id: 'rv580-flyplassveien',
-    title: 'RV580 Flyplassveien',
-    src: 'https://webkamera.atlas.vegvesen.no/public/kamera?id=284629',
-    type: EMBED_TYPES.IMAGE,
-    lat: 60.292236,
-    lon: 5.238832
-  },
-  {
-    id: 'e39-fjosangerveien',
-    title: 'E39 Fjøsangerveien',
-    src: 'https://webkamera.atlas.vegvesen.no/public/kamera?id=110699',
-    type: EMBED_TYPES.IMAGE,
-    lat: 60.353325,
-    lon: 5.338389
   }
 ]
 

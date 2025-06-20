@@ -54,5 +54,6 @@ export default function Map({ lat, lon }) {
 }
 
 const StyledMap = styled.div`
-  min-height: 20rem;
+  width: 100%;
+  height: 100%;
 `

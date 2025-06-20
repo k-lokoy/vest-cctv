@@ -65,3 +65,7 @@ b {
 li + li {
   margin-block-start: .5em;
 }
+
+button {
+  font-family: 'Montserrat', sans-serif;
+}

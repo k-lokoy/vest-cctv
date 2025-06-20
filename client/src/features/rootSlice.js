@@ -1,15 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { UNITS } from '../data/constants'
 import locations from '../data/locations'
-import { accounts as twitterAccounts } from '../data/twitter'
 
 const initialState = {
   currentLocation: null,
   lastRefreshed: 0,
-  units: 'metric',
-  maxReportAge: 8.64e+7,
-  twitterAccounts: [...twitterAccounts]
+  content: 'VIDEO'
 }
 
 const reducers = {
@@ -20,18 +16,9 @@ const reducers = {
   setLastRefreshed: function(state, action) {
     state.lastRefreshed = action.payload
   },
-  setUnits: function(state, action) {
-    state.units = action.payload || UNITS.METRIC
-  },
-  setMaxReportAge: function(state, action) {
-    state.maxReportAge = action.payload || initialState.maxReportAge
-  },
-  toggleTwitterAccount: function(state, action) {
-    state.twitterAccounts = state.twitterAccounts.map(account => ({
-      ...account,
-      isEnabled: account.handle == action.payload ? !account.isEnabled : account.isEnabled
-    }))
-  },
+  setContent: function(state, action) {
+    state.content = action.payload
+  }
 }
 
 const rootSlice = createSlice({
@@ -43,9 +30,7 @@ const rootSlice = createSlice({
 export const {
   setCurrentLocation,
   setLastRefreshed,
-  setUnits,
-  setMaxReportAge,
-  toggleTwitterAccount
+  setContent
 } = rootSlice.actions
 
 export default rootSlice.reducer

@@ -55,7 +55,7 @@ export default function Video({ src, type }) {
 
 const StyledVideo = styled.video`
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
 `
 
 const StyledIframe = styled.iframe`
