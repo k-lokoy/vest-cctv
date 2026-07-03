@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useMemo, useCallback } from 'react'
 import styled from 'styled-components'
 import videojs from 'video.js'
 
@@ -9,7 +9,7 @@ export default function Video({ src, type }) {
   const videoRef  = useRef(null)
   const playerRef = useRef(null)
 
-  const videoJsOptions = {
+  const videoJsOptions = useMemo(() => ({
     autoplay: true,
     controls: true,
     responsive: true,
@@ -17,12 +17,12 @@ export default function Video({ src, type }) {
     sources: [{
       src
     }]
-  }
+  }), [src])
 
-  function onReady(player) {
+  const onReady = useCallback((player) => {
     player.src(src)
     player.play()
-  }
+  }, [src])
 
   useEffect(function() {
     if (!videoRef.current) return
@@ -31,7 +31,7 @@ export default function Video({ src, type }) {
       videojs.log('player is ready');
       onReady && onReady(playerRef.current)
     })
-  }, [src])
+  }, [src, videoJsOptions, onReady])
 
   switch(type) {
     case EMBED_TYPES.VIDEO_JS:
