@@ -19,8 +19,8 @@ const locations = [
   },
     {
     id: 'straume-2',
-    title: 'Straume 2',
-    src: 'https://svplive-lh.akamaized.net/hls/live/2039442/vnytt/qy2WDmHr5pgQxjMuWTbDy/source.m3u8',
+    title: 'Straume (Obs)',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001085/vnytt/qy2WDmHr5pgQxjMuWTbDy/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.360576,
     lon: 5.124039,
@@ -28,7 +28,7 @@ const locations = [
   {
     id: 'sotrabrua-ost',
     title: 'Sotrabrua (East)',
-    src: 'https://svplive-lh.akamaized.net/hls/live/2039445/vnytt/0K3lxIhudMtz1yAfOAnk0/source.m3u8',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001088/vnytt/0K3lxIhudMtz1yAfOAnk0/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.372490,
     lon: 5.170646
@@ -96,6 +96,14 @@ const locations = [
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.308196,
     lon: 5.341326
+  },
+  {
+    id: 'bildoy',
+    title: 'Bildøy',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001085/vnytt/c25x3aHGCCyXjA5YsgM1z/source.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
+    lat: 0,
+    lon: 0
   }
 ]
 
