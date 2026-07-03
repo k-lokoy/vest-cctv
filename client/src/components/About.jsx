@@ -28,7 +28,7 @@ export default function About() {
           >Vestnytt cameras</a></li>
         </ul>
 
-        <StyledCopyright>Copyright 2022-2025 © Lokøy Design</StyledCopyright>
+        <StyledCopyright>Copyright 2022-2026 © Lokøy Design</StyledCopyright>
       </article>
     </>
   )
