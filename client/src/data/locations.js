@@ -4,15 +4,15 @@ const locations = [
   {
     id: 'straumsundet',
     title: 'Straumsundet',
-    src: 'https://svplive-lh.akamaized.net/hls/live/2039444/vnytt/mLTCtDZlSUPVAuUqmIliz/source.m3u8',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001087/vnytt/mLTCtDZlSUPVAuUqmIliz/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.358455,
     lon: 5.114327,
   },
   {
     id: 'straume',
-    title: 'Straume',
-    src: 'https://svplive-lh.akamaized.net/hls/live/2039443/vnytt/qSIcaRpL0KZVyWQs6G9CW/source.m3u8',
+    title: 'Straume (Rema 1000)',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001086/vnytt/qSIcaRpL0KZVyWQs6G9CW/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.360576,
     lon: 5.124039,
@@ -44,7 +44,7 @@ const locations = [
   {
     id: 'janaflaten',
     title: 'Janaflaten',
-    src: 'https://svplive-lh.akamaized.net/hls/live/2039445/vnytt/Nhm66VX22NbQJ59NqYyr9/source.m3u8',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001088/vnytt/Nhm66VX22NbQJ59NqYyr9/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.372551,
     lon: 5.161009
