@@ -23,7 +23,7 @@ jobs:
       
       - name: Install dependencies
         working-directory: ./client
-        run: npm install
+        run: npm ci
       
       - name: Configure Git
         run: |
