@@ -46,12 +46,14 @@ const StyledCameraButton = styled.button`
   margin-bottom: .5rem;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.75rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   width: 100%;
+  transition: 0.1s ease-in-out;
 
+  &:hover,
   &.active {
     background-color: var(--color-green);
     color: var(--color--800);
