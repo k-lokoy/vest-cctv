@@ -112,6 +112,14 @@ const locations = [
     type: EMBED_TYPES.VIDEO_JS,
     lat: 0,
     lon: 0
+  },
+  {
+    id: 'fjosangerveien-bkk',
+    title: 'Fjøsangerveien v/BKK',
+    src: 'https://kamera.vegvesen.no/public/3000061_1/hls_1_stream_1_orig.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
+    lat: 0,
+    lon: 0
   }
 ]
 
