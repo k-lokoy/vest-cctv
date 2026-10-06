@@ -14,6 +14,7 @@ export default function Video({ src, type }) {
     controls: true,
     responsive: true,
     fluid: true,
+    aspectRatio: '16:9',
     sources: [{
       src
     }]
