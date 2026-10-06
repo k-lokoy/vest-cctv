@@ -123,6 +123,6 @@ const locations = [
   }
 ]
 
-locations.sort((a, b) => a.id.localeCompare(b.id))
+locations.sort((a, b) => a.id.localeCompare(b.id, 'no'))
 
 export default locations
