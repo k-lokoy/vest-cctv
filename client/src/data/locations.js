@@ -4,7 +4,7 @@ const locations = [
   {
     id: 'straumsundet',
     title: 'Straumsundet',
-    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001087/vnytt/mLTCtDZlSUPVAuUqmIliz/source.m3u8',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001087/vnytt_mLTCtDZlSUPVAuUqmIliz/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.358455,
     lon: 5.114327,
@@ -12,7 +12,7 @@ const locations = [
   {
     id: 'straume',
     title: 'Straume (Rema 1000)',
-    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001086/vnytt/qSIcaRpL0KZVyWQs6G9CW/source.m3u8',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001086/vnytt_qSIcaRpL0KZVyWQs6G9CW/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.360576,
     lon: 5.124039,
@@ -20,7 +20,7 @@ const locations = [
     {
     id: 'straume-2',
     title: 'Straume (Obs)',
-    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001085/vnytt/qy2WDmHr5pgQxjMuWTbDy/source.m3u8',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001085/vnytt_qy2WDmHr5pgQxjMuWTbDy/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.360576,
     lon: 5.124039,
@@ -28,7 +28,7 @@ const locations = [
   {
     id: 'sotrabrua-ost',
     title: 'Sotrabrua (East)',
-    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001088/vnytt/0K3lxIhudMtz1yAfOAnk0/source.m3u8',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001088/vnytt_0K3lxIhudMtz1yAfOAnk0/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.372490,
     lon: 5.170646
@@ -44,7 +44,7 @@ const locations = [
   {
     id: 'janaflaten',
     title: 'Janaflaten',
-    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001088/vnytt/Nhm66VX22NbQJ59NqYyr9/source.m3u8',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001088/vnytt_Nhm66VX22NbQJ59NqYyr9/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 60.372551,
     lon: 5.161009
@@ -100,7 +100,15 @@ const locations = [
   {
     id: 'bildoy',
     title: 'Bildøy',
-    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001085/vnytt/c25x3aHGCCyXjA5YsgM1z/source.m3u8',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001085/vnytt_c25x3aHGCCyXjA5YsgM1z/source.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
+    lat: 0,
+    lon: 0
+  },
+  {
+    id: 'knappskog',
+    title: 'Knappskog',
+    src: 'https://kamera.vegvesen.no/public/3001079_1/hls_1_stream_1_orig.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 0,
     lon: 0
