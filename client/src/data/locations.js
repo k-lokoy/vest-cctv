@@ -130,14 +130,6 @@ const locations = [
     lon: 0
   },
   {
-    id: 'indre-arma-e16',
-    title: 'E16 Indre Arma',
-    src: 'https://kamera.vegvesen.no/public/1229030_1/hls_1_stream_1_orig.m3u8',
-    type: EMBED_TYPES.VIDEO_JS,
-    lat: 0,
-    lon: 0
-  },
-  {
     id: 'vaagbotn-e39',
     title: 'E39 Vågbotn',
     src: 'https://kamera.vegvesen.no/public/1229013_1/hls_1_stream_1_orig.m3u8',
