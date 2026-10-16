@@ -148,7 +148,7 @@ const locations = [
   {
     id: 'stusshamn',
     title: 'Stusshamn',
-    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001089/avavis_qArI4NNhDh0EqZgMVxUDO/source.m3u8'
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001089/avavis_qArI4NNhDh0EqZgMVxUDO/source.m3u8',
     type: EMBED_TYPES.VIDEO_JS,
     lat: 0,
     lon: 0,
