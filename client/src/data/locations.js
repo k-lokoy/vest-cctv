@@ -120,7 +120,39 @@ const locations = [
     type: EMBED_TYPES.VIDEO_JS,
     lat: 0,
     lon: 0
-  }
+  },
+  {
+    id: 'fjosangerveien-e39',
+    title: 'E39 Fjøsangerveien',
+    src: 'https://kamera.vegvesen.no/public/1229029_2/hls_1_stream_1_orig.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
+    lat: 0,
+    lon: 0
+  },
+  {
+    id: 'indre-arma-e16',
+    title: 'E16 Indre Arma',
+    src: 'https://kamera.vegvesen.no/public/1229030_1/hls_1_stream_1_orig.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
+    lat: 0,
+    lon: 0
+  },
+  {
+    id: 'vaagbotn-e39',
+    title: 'E39 Vågbotn',
+    src: 'https://kamera.vegvesen.no/public/1229013_1/hls_1_stream_1_orig.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
+    lat: 0,
+    lon: 0
+  },
+  {
+    id: 'stusshamn',
+    title: 'Stusshamn',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001089/avavis_qArI4NNhDh0EqZgMVxUDO/source.m3u8'
+    type: EMBED_TYPES.VIDEO_JS,
+    lat: 0,
+    lon: 0,
+  },
 ]
 
 locations.sort((a, b) => a.id.localeCompare(b.id, 'no'))
