@@ -152,7 +152,7 @@ const locations = [
     type: EMBED_TYPES.VIDEO_JS,
     lat: 0,
     lon: 0,
-  },
+  }
 ]
 
 locations.sort((a, b) => a.id.localeCompare(b.id, 'no'))
