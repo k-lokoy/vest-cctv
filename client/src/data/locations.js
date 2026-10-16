@@ -144,6 +144,14 @@ const locations = [
     type: EMBED_TYPES.VIDEO_JS,
     lat: 0,
     lon: 0,
+  },
+  {
+    id: 'kleppesto',
+    title: 'Kleppestø retning Holmedalen',
+    src: 'https://svplive-lh.akamaized.net/hls/live/msl5/20001088/avavis_mpoykibCSTTtTvs0dargy/source.m3u8',
+    type: EMBED_TYPES.VIDEO_JS,
+    lat: 0,
+    lon: 0
   }
 ]
 
